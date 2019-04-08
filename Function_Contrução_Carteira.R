@@ -41,9 +41,15 @@ type.market <- switch (market,
 
 
 if (market == "IBOVESPA"){
+  
 ###########################################################
 ## WebScraping IBOVESPA componentes desde yahoo finance  ##
-###########################################################
+  
+ # Essa parte pode ser modificada melhor alguem tem aluma idea 
+ # Eu vi este pacote que achei interesante acho que semplifica muita a vida de todos nois 
+ # library(BatchGetSymbols)
+  
+  ###########################################################
 url <- getURL(type.market,.opts = list(ssl.verifypeer = FALSE) )
 tabla <- readHTMLTable(url)
 tabla <- list.clean(tabla, fun = is.null, recursive = FALSE)
